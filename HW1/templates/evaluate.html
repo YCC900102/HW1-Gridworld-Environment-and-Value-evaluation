@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Value & Policy Matrix</title>
+    <style>
+        table { border-collapse: collapse; margin: 20px 0; }
+        td {
+            width: 40px; height: 40px;
+            border: 1px solid #000;
+            text-align: center;
+            vertical-align: middle;
+            font-family: monospace;
+        }
+        .container { display: flex; gap: 50px; }
+        h2 { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <h1>策略顯示與價值評估結果</h1>
+    <div class="container">
+        <div>
+            <h2>Value Matrix</h2>
+            <table>
+                {% for row in value_matrix %}
+                <tr>
+                    {% for val in row %}
+                    <td>{{ val }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div>
+            <h2>Policy Matrix</h2>
+            <table>
+                {% for row in policy_matrix %}
+                <tr>
+                    {% for symbol in row %}
+                    <td>{{ symbol }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <a href="/">← 回到地圖設定頁面</a>
+</body>
+</html>
